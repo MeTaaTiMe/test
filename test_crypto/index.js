@@ -8,7 +8,7 @@ async function setKey(){
     let k2_private=await getPrivateKey(k2);
     let k2_public=await getPublicKey(k2);
     let keyText="";
-    keyText+="Aの秘密鍵:";
+    keyText+="Aの秘密鍵(PKCS#8):";
     for(i=0;i<k1_private.length;i++){
         if(i%20==0)keyText+="<br>";
         keyText+=k1_private[i].toString(16).padStart(2, '0');
@@ -20,7 +20,7 @@ async function setKey(){
         keyText+=k1_public[i].toString(16).padStart(2, '0');
         if(i!=k1_public.length-1)keyText+=":";
     }
-    keyText+="<br>Bの秘密鍵:";
+    keyText+="<br>Bの秘密鍵(PKCS#8):";
     for(i=0;i<k2_private.length;i++){
         if(i%20==0)keyText+="<br>";
         keyText+=k2_private[i].toString(16).padStart(2, '0');
