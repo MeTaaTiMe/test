@@ -9,9 +9,8 @@ function firebase_send(){
 
 document.getElementById("readbtn").addEventListener("click",firebase_read);
 function firebase_read(){
-    let text=database.ref(document.getElementById("key").value).on('value', (snapshot) => {
+    database.ref(document.getElementById("key").value).on('value', (snapshot) => {
         const data = snapshot.val();
-        updateStarCount(postElement, data);
-    }).val;
-    document.getElementById("readtext").innerText=text;
+        document.getElementById("readtext").innerText=data;
+    });
 }
